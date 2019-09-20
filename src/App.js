@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import "bootstrap/dist/css/bootstrap.min.css"
+
+import Navbar from "./components/navbar.component"
+import CaseList from "./components/case-list.component"
+import EditDataEntry from "./components/edit-data-entry.component"
+import CardiacForm from "./components/cardiac-form.component"
+import NonCardiacForm from "./components/non-cardiac-form.component"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <Navbar />
+        <br/>
+        <Route path="/" exact component={CaseList} />
+        <Route path="/edit/:id" exact component={EditDataEntry} />
+        <Route path="/cardiac" exact component={CardiacForm} />
+        <Route path="/non-cardiac" exact component={NonCardiacForm} />
+      </div>
+    </Router>
   );
 }
 
