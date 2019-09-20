@@ -10,7 +10,7 @@ import NonCardiacForm from "./components/non-cardiac-form.component"
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="container">
         <Navbar />
         <br/>
