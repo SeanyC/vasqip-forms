@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vasqip-forms/precache-manifest.3f10520a0a0a16d0b632d7cab7a78970.js"
+  "/vasqip-forms/precache-manifest.c0c72cd55f98cbc29b5d43a2e6060708.js"
 );
 
 self.addEventListener('message', (event) => {
