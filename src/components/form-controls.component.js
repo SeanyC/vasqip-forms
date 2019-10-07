@@ -8,20 +8,11 @@ class SelectFormControl extends Component {
     return (
       <div className="form-group"> 
         <label>{this.props.label}</label>
-        <select name={this.props.label}
-          ref="userInput"
-          required
-          className="form-control"
-          onChange={this.context}>
           {
-            OPTIONS[this.props.options].map(function(opt) {
-              return <option 
-                key={opt}
-                value={opt}>{opt}
-                </option>;
+            OPTIONS[this.props.options].map((opt) => {
+              return <p>&emsp;<input type="radio"  name={this.props.label} value={opt} /> {opt}<br /></p>
             })
           }
-        </select>
       </div>
     )   
   }
@@ -41,16 +32,10 @@ class TextFormControl extends Component {
 class BooleanFormControl extends Component {
   render() {
     return (
-      <div className="form-group"> 
-      <label>{this.props.label}</label>
-      <select name={this.props.label}
-        ref="userInput"
-        required
-        className="form-control"
-        onChange={this.context}>
-        <option key='Yes' value='Yes'>Yes</option>
-        <option key='No' value='No'>No</option>
-      </select>
+    <div className="form-group"> 
+      <label>{this.props.label}</label><br />
+      &emsp;<input type="radio" name={this.props.label} value="yes" checked /> Yes<br />
+      &emsp;<input type="radio" name={this.props.label} value="no" checked /> No<br />
     </div>
     )
   }
