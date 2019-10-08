@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import { HandlerContext } from "./handler-context"
 import { TextFormControl, SelectFormControl, BooleanFormControl } from "./form-controls.component"
+import FormHeader from "./form-header.component"
 
 export default class NonCardiacForm extends Component {
   constructor(props) {
@@ -81,11 +82,12 @@ export default class NonCardiacForm extends Component {
     return (
     <div>
       <h3>VASQIP Non-Cardiac Data Form</h3>
+      <FormHeader />
       <form onSubmit={this.onSubmit}>
         <HandlerContext.Provider value={ this.onChangeFormData }>
           <div className="row">
             <div className="col">
-              <div className="card">
+              <div className="card mb-3">
                 <h5 className="card-header">General</h5>
                 <div className="card-body">
                   <div className="row">
@@ -107,7 +109,7 @@ export default class NonCardiacForm extends Component {
                   <SelectFormControl label="Sleep apnea - compliance" type="select" options="sleepApneaCompliance" />
                 </div>
               </div>
-              <div className="card">
+              <div className="card mb-3">
                 <h5 className="card-header">Pulmonary, Hepatobiliary, GI</h5>
                 <div className="card-body">
                   <BooleanFormControl label="Vent dependent w/in 48 hrs pre-op" type="boolean" />
@@ -117,7 +119,7 @@ export default class NonCardiacForm extends Component {
                   <BooleanFormControl label="Esophageal varices" type="boolean" />
                 </div>
               </div>
-              <div className="card">
+              <div className="card mb-3">
                 <h5 className="card-header">Cardiac</h5>
                 <div className="card-body">
                   <SelectFormControl label="CHF" type="select" options="chf" />
@@ -131,21 +133,21 @@ export default class NonCardiacForm extends Component {
               </div>
             </div>
             <div className="col">
-              <div className="card">
+              <div className="card mb-3">
                 <h5 className="card-header">Vascular</h5>
                 <div className="card-body">
                   <SelectFormControl label="PAD" type="select" options="pad" />
                   <BooleanFormControl label="Rest pain / gangrene" type="boolean" />
                 </div>
               </div>
-              <div className="card">
+              <div className="card mb-3">
                 <h5 className="card-header">Renal</h5>
                 <div className="card-body">
                   <BooleanFormControl label="ARF" type="boolean" />
                   <BooleanFormControl label="Dialysis - requires or is on" type="boolean" />
                 </div>
               </div>
-              <div className="card">
+              <div className="card mb-3">
                 <h5 className="card-header">CNS</h5>
                 <div className="card-body">
                   <BooleanFormControl label="Impaired sensorium" type="boolean" />
@@ -157,7 +159,7 @@ export default class NonCardiacForm extends Component {
                   <SelectFormControl label="Impaired cognitive function" type="select" options="impairedCog" />
                 </div>
               </div>
-              <div className="card">
+              <div className="card mb-3">
                 <h5 className="card-header">Nutritional/Immune,Other</h5>
                 <div className="card-body">
                   <BooleanFormControl label="Disseminated cancer" type="boolean" />
@@ -179,13 +181,13 @@ export default class NonCardiacForm extends Component {
             </div>
           </div>
 
-          <div className="">
-            <input type="submit" value="Save" className="btn btn-primary" />
+          <div className="row text-right">
+            <div className="col text-center">
+              <input type="submit" value="Save Draft" className="btn btn-primary mr-3" />
+              <input type="submit" value="Submit Report" className="btn btn-primary" />
+            </div>
           </div>
-          <div className="">
-            <input type="submit" value="Submit" className="btn btn-primary" />
-          </div>
-        </HandlerContext.Provider> 
+        </HandlerContext.Provider>
       </form>
     </div>
     )

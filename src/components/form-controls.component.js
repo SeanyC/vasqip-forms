@@ -3,18 +3,17 @@ import { HandlerContext } from "./handler-context"
 import { OPTIONS } from './options'
 
 class SelectFormControl extends Component {
-  
   render() {
     return (
       <div className="form-group"> 
         <label>{this.props.label}</label>
           {
             OPTIONS[this.props.options].map((opt) => {
-              return <p>&emsp;<input type="radio"  name={this.props.label} value={opt} /> {opt}<br /></p>
+              return <p>&emsp;<input type="radio"  name={this.props.label} value={opt} /> {opt}</p>
             })
           }
       </div>
-    )   
+    )
   }
 }
 
