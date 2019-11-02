@@ -232,14 +232,59 @@ export default class NonCardiacForm extends Component {
               </Accordion.Collapse>
             </Card>
 
-            <div className="row text-right">
-              <div className="col text-center">
-                <input type="submit" value="Save Draft" className="btn btn-primary mr-3" />
-                <input type="submit" value="Submit Report" className="btn btn-primary" />
-              </div>
-            </div>
+            <Card>
+              <Accordion.Toggle as={Card.Header} eventKey="2">
+                Operation Information
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="2">
+                <Card.Body>
+                  <TextFormControl label="Surgical Specialty" type="text" />
+                  <TextFormControl label="Prinicpal Operation" type="text" />
+                  <TextFormControl label="CPT Codes" type="text" />
+                  <TextFormControl label="Concurrent Procedure" type="text" />
+                  <TextFormControl label="PGY of Primary Surgeon" type="text" />
+                  <TextFormControl label="Surgical Priority" type="text" />
+                  <TextFormControl label="Wound Classification" type="text" />
+                  <TextFormControl label="ASA Classification" type="text" />
+                  <TextFormControl label="Princ. Anesthesia Technique" type="text" />
+                  <TextFormControl label="RBC Units Transfused" type="text" />
+                  <TextFormControl label="Intraop Disseminated Cancer" type="text" />
+                  <TextFormControl label="Intraoperative Ascites" type="text" />
+                </Card.Body>
+              </Accordion.Collapse>
+            </Card>
+
+            <Card className="mb-3">
+              <Accordion.Toggle as={Card.Header} eventKey="3">
+                Patient Demographics
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="3">
+                <Card.Body>
+                  <TextFormControl label="Transfer Status" type="text" />
+                  <TextFormControl label="Observation Admission Date/Time" type="text" />
+                  <TextFormControl label="Observation Discharge Date/Time" type="text" />
+                  <TextFormControl label="Observation Treating Specialty" type="text" />
+                  <TextFormControl label="Hospital Admission Date/Time" type="text" />
+                  <TextFormControl label="Hospital Discharge Date/Time" type="text" />
+                  <TextFormControl label="Admit/Transfer to Surgical Svc." type="text" />
+                  <TextFormControl label="Discharge/Transfer to Chronic Care" type="text" />
+                  <TextFormControl label="Length of Postop Hospital Stay" type="text" />
+                  <TextFormControl label="Hospital Admission Status" type="text" />
+                  <TextFormControl label="Patient's Ethnicity" type="text" />
+                  <TextFormControl label="Patient's Race" type="text" />
+                  <TextFormControl label="Date of Death" type="text" />
+                  <TextFormControl label="30-Day Death" type="text" />
+                </Card.Body>
+              </Accordion.Collapse>
+            </Card>
           </HandlerContext.Provider>
         </Accordion>
+        <div className="row text-right">
+          <div className="col text-center">
+            <input type="submit" value="Save Draft" className="btn btn-primary mr-3" />
+            <input type="submit" value="Submit Report" className="btn btn-primary" />
+          </div>
+        </div>
       </form>
     </div>
     )
